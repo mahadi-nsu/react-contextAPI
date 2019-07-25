@@ -1,28 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Movie from "./Movie";
 
-export default function MovieList() {
-  const [movies, setMovies] = useState([
-    {
-      name: "Harry potter",
-      price: "$10",
-      id: 1
-    },
-    {
-      name: "Game of Thrones",
-      price: "$10",
-      id: 2
-    },
-    {
-      name: "Forest gump",
-      price: "$10",
-      id: 3
-    }
-  ]);
-
+export default function MovieList(props) {
   return (
     <div>
-      {movies.map(movie => (
+      {props.movie_list.map(movie => (
         <Movie key={movie.id} {...movie} />
       ))}
     </div>
