@@ -1,25 +1,10 @@
 import React, { useState, createContext } from "react";
+import moviesData from './data';
 
 export const MovieContext = createContext();
 
 export const MovieProvider = props => {
-  const [movies, setMovies] = useState([
-    {
-      name: "Harry potter",
-      price: "$10",
-      id: 1
-    },
-    {
-      name: "Game of Thrones",
-      price: "$10",
-      id: 2
-    },
-    {
-      name: "Forest gump",
-      price: "$10",
-      id: 3
-    }
-  ]);
+  const [movies, setMovies] = useState(moviesData);
   return (
     <MovieContext.Provider value={[movies, setMovies]}>
       {props.children}
